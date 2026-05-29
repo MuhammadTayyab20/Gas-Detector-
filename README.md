@@ -14,7 +14,7 @@ Fast response (1–2 seconds)
 Expandable with a Wi-Fi module for IoT cloud monitoring
 
 # Use Cases
-Home safety, industrial air quality monitoring, and educational demonstrations.You said: give me read me comtantgive me read me comtant11:20 PMClaude responded: Gas Detector System 🛑Gas Detector System 🛑
+Home safety, industrial air quality monitoring, and educational demonstrations.
 An Arduino-based embedded project that continuously monitors the surrounding air for harmful gases and triggers an audible alarm whenever gas concentration exceeds a safe limit.
 
 # 📋 Overview
