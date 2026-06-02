@@ -1,57 +1,53 @@
-# Gas Detector System
-An Arduino-based gas detection project that continuously monitors air for harmful gases (ammonia, CO₂, benzene, alcohol, and smoke) and triggers an audible alarm when concentration exceeds a safe limit.
-How It Works
+# Gas Detector 🚨
 
-The MQ-135 sensor outputs an analog voltage that varies with gas concentration.
-The Arduino UNO reads this on pin A0 via its 10-bit ADC (values 0–1023).
-When the reading exceeds the threshold (default 300), pin 8 goes HIGH, activating the buzzer.
-The buzzer turns off automatically once levels drop below the threshold—no manual reset.
+An Arduino-based gas detection system that continuously monitors the surrounding air for harmful gases — ammonia, CO₂, benzene, alcohol, and smoke — and triggers an audible alarm when the concentration crosses a safe threshold.
 
-# Features
+---
 
-Low-cost and solderless (breadboard-friendly)
-Fast response (1–2 seconds)
-Expandable with a Wi-Fi module for IoT cloud monitoring
+## 🔧 How It Works
 
-# Use Cases
-Home safety, industrial air quality monitoring, and educational demonstrations.
-An Arduino-based embedded project that continuously monitors the surrounding air for harmful gases and triggers an audible alarm whenever gas concentration exceeds a safe limit.
+A gas sensor (MQ-series) constantly reads the gas concentration in the air. The Arduino compares each reading against a defined safe limit. When the reading exceeds that limit, the Arduino activates a buzzer to warn anyone nearby of a potential gas leak or unsafe air quality.
 
-# 📋 Overview
-The Gas Detector System detects harmful gases such as ammonia, carbon dioxide, benzene, alcohol, and smoke using the MQ-135 sensor. When dangerous levels are detected, it activates a buzzer to alert users—making it ideal for home, industrial, and educational use.
+---
 
-# ⚙️ How It Works
+## 🧰 Components Used
 
-The MQ-135 chemo-resistive sensor changes its internal resistance in the presence of target gases, producing an analog voltage that varies with gas concentration.
-The Arduino UNO reads this voltage through analog pin A0 and converts it to a digital value (0–1023) using its built-in 10-bit ADC.
-The value is compared against a predefined threshold (default: 300).
-When the reading exceeds the threshold, the Arduino sets digital pin 8 HIGH, activating the buzzer.
-Once gas levels drop below the threshold, the buzzer switches off automatically—no manual reset required.
+- Arduino Uno (or compatible board)
+- MQ-series gas sensor (MQ-135) 
+- Buzzer 
+- Breadboard + jumper wires
+- USB cable / power supply
 
-# ✨ Features
+---
 
-💰 Low-cost and easy to build
-🔧 Solderless assembly on a breadboard
-⚡ Fast response (1–2 seconds)
-🔄 Automatic reset
-🌐 Expandable with a Wi-Fi module for IoT cloud monitoring
 
-# 🛠️ Components Required
-ComponentQuantityArduino UNO1MQ-135 Gas Sensor1Active Buzzer1Breadboard1Jumper WiresAs needed
 
-# 🔌 Circuit Connections
-MQ-135 / BuzzerArduino UNOMQ-135 VCC5VMQ-135 GNDGNDMQ-135 A0A0Buzzer (+)Pin 8Buzzer (–)GND
+## ▶️ Getting Started
 
-# 🚀 Getting Started
+1. Open the `.ino` sketch in the **Arduino IDE**.
+2. Connect the components as per the wiring table.
+3. Select your board and port under **Tools**.
+4. Click **Upload**.
+5. Open the **Serial Monitor** to watch live sensor readings.
 
-Assemble the circuit on a breadboard as per the connections above.
-Connect the Arduino UNO to your computer via USB.
-Open the code in the Arduino IDE.
-Select the correct board and port, then upload the code.
-Open the Serial Monitor (9600 baud) to view live gas readings.
+---
 
-# 📌 Use Cases
+## 🎚️ Calibration
 
-🏠 Home safety
-🏭 Industrial air quality monitoring
-🎓 Educational demonstrations
+The alarm threshold is set in the code as a fixed value. Let the sensor warm up for a minute or two on first power-up, note the baseline reading in clean air, then set the threshold slightly above that baseline.
+
+---
+
+## 🛠️ Tech
+
+- **Language:** C++ (Arduino)
+- **Platform:** Arduino IDE
+
+---
+
+## 📌 Possible Improvements
+
+- [ ] Add an LCD/OLED display to show live readings
+- [ ] Add Wi-Fi (ESP32) alerts to a phone
+- [ ] Log readings over time
+- [ ] Multiple gas-specific sensors
